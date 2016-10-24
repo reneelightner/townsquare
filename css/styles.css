@@ -1,0 +1,155 @@
+.header {
+  margin-top: 60px; }
+
+.nav-tabs {
+  margin: 20px 0 30px 0; }
+  .nav-tabs li.active a {
+    border-color: #D8D8D8;
+    border-bottom-color: transparent; }
+    .nav-tabs li.active a label {
+      color: #585858; }
+    .nav-tabs li.active a:hover label {
+      color: #585858; }
+  .nav-tabs li a {
+    border-radius: 1px;
+    border-color: #fff;
+    border-bottom-color: transparent; }
+    .nav-tabs li a label {
+      color: #5bc0de;
+      pointer-events: none; }
+    .nav-tabs li a:hover {
+      background-color: #F8F8F8; }
+      .nav-tabs li a:hover label {
+        color: #31b0d5; }
+
+.fa {
+  margin-right: 10px; }
+
+label, h4, h3 {
+  color: #585858;
+  font-weight: 500; }
+
+label {
+  font-size: 12px; }
+
+form .form-group .form-control {
+  color: #F8F8F8;
+  border-radius: 1px;
+  border-color: #D8D8D8;
+  box-shadow: none;
+  font-size: 12px; }
+
+.well {
+  border-radius: 1px;
+  border-color: #D8D8D8;
+  background-color: #F8F8F8;
+  box-shadow: none; }
+  .well.no-fill {
+    background-color: #fff; }
+  .well.well-sm {
+    background-color: #E8E8E8;
+    border: none; }
+    .well.well-sm label {
+      padding: 6px 0;
+      margin-bottom: 0; }
+
+.btn-group.cancel-save .btn {
+  padding: 8px 12px;
+  margin-left: 5px; }
+.btn-group .btn {
+  background-color: #fff;
+  text-transform: uppercase;
+  color: #585858;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 1px;
+  border-color: #D8D8D8; }
+  .btn-group .btn:hover {
+    background-color: #F8F8F8; }
+  .btn-group .btn.active {
+    background-color: #5bc0de;
+    color: #fff; }
+    .btn-group .btn.active:hover {
+      background-color: #31b0d5; }
+
+ul.social-icons {
+  padding: 0; }
+  ul.social-icons li {
+    list-style-type: none;
+    margin-bottom: 10px; }
+    ul.social-icons li i {
+      font-size: 20px;
+      padding-top: 5px;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #585858;
+      color: #fff;
+      border-radius: 4px; }
+  ul.social-icons.addColor li i.fa-facebook {
+    background: #3b5998; }
+  ul.social-icons.addColor li i.fa-linkedin {
+    background: #007bb6; }
+  ul.social-icons.addColor li i.fa-twitter {
+    background: #00aced; }
+  ul.social-icons.addColor li i.fa-google-plus {
+    background: #dd4b39; }
+  ul.social-icons.addColor li i.fa-youtube {
+    background: #bb0000; }
+  ul.social-icons.addColor li i.fa-flickr {
+    background: #ff0084; }
+  ul.social-icons.addColor li i.fa-vimeo-square {
+    background: #1ab7ea; }
+  ul.social-icons.addColor li i.fa-pinterest {
+    background: #cb2027; }
+  ul.social-icons.addColor li i.fa-instagram {
+    background: #bc2a8d; }
+  ul.social-icons.addColor li i.fa-foursquare {
+    background: #0072b1; }
+  ul.social-icons.addColor li i.fa-tumblr {
+    background: #32506d; }
+
+.input-group {
+  width: 40%; }
+  .input-group ::-webkit-input-placeholder {
+    color: #585858; }
+  .input-group :-moz-placeholder {
+    /* Firefox 18- */
+    color: #585858; }
+  .input-group ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #585858; }
+  .input-group :-ms-input-placeholder {
+    color: #585858; }
+  .input-group.social-module {
+    margin-bottom: 10px;
+    width: 100%; }
+    .input-group.social-module ::-webkit-input-placeholder {
+      color: #E8E8E8; }
+    .input-group.social-module :-moz-placeholder {
+      /* Firefox 18- */
+      color: #E8E8E8; }
+    .input-group.social-module ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #E8E8E8; }
+    .input-group.social-module :-ms-input-placeholder {
+      color: #E8E8E8; }
+    .input-group.social-module .input-group-addon {
+      color: #B8B8B8; }
+  .input-group .input-group-addon {
+    font-size: 12px;
+    background-color: #F8F8F8;
+    padding: 3px 6px;
+    text-align: left;
+    border-radius: 1px;
+    border-color: #D8D8D8;
+    padding-left: 12px;
+    color: #585858; }
+  .input-group .form-control {
+    font-size: 12px;
+    height: 30px;
+    border-radius: 1px;
+    border-color: #D8D8D8; }
+
+/*# sourceMappingURL=styles.css.map */
