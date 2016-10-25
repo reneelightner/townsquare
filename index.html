@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src='index.js'></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- info on font: https://coolestguidesontheplanet.com/creating-social-media-menu-icons-fontawesome/ -->
@@ -60,7 +61,14 @@
 								<div class="clearfix"></div>
 							</div>
 							<ul class='social-icons' ng-class='{addColor: myCtrl.onactive}'>
-								<li ng-repeat="social in myCtrl.socialArr"><i class="fa" ng-class="social.iconClass"></i><label>{{social.label}}</label></li>
+								<li ng-repeat="social in myCtrl.socialArr">
+									<i class="fa" ng-class="social.iconClass"></i>
+									<label>{{social.label}}</label>
+									<span ng-show="myCtrl.socialArr[$index].fullURL" class='pull-right'>
+										<label>preview:</label>
+										<a target="new" ng-href={{myCtrl.socialArr[$index].fullURL}}><i class="fa" ng-class="social.iconClass"></i></a>
+									</span>
+								</li>
 							</ul>
 						</div>
 						<div class="col-md-6">
@@ -75,7 +83,7 @@
 							<form class="form-inline">
 								<div ng-repeat="social in myCtrl.socialArr" class="social-module input-group">
 								    <div ng-if="social.label!='Tumblr'" class="input-group-addon">{{social.url}}</div>
-								    <input type="text" class="form-control" placeholder="Screenname">
+								    <input type="text" class="form-control" placeholder="Screenname" ng-model="enteredText" ng-change="myCtrl.checkValid($index, enteredText)">
 								    <div ng-if="social.label=='Tumblr'"  class="input-group-addon">{{social.url}}</div>
 								</div>
 							</form>					

@@ -1,23 +1,11 @@
 var myModule = angular.module("MyApp", [])
-	.controller('MyController', function(Utilities){
+	.controller('MyController', function(UseHttp){
 
+		// store reference of "this"
 		var self = this;
 
-		self.onactive = true;
-		self.offactive = false;
-
-		self.changeColorIcons = function(button) {
-		    if (button === 'on') {
-		        self.onactive = true;
-		        self.offactive = false;
-		    } else if ( button === 'off') {
-		        self.onactive = false;
-		        self.offactive = true;
-		    }
-	    };
-
-	    // call service method
-		Utilities.getData("data.json").then(function(data) {
+	    // call service method for http request
+		UseHttp.request("data.json").then(function(data) {
 		    // assign data after promise resolves
 		    self.socialArr = data;
 		});
@@ -32,20 +20,64 @@ var myModule = angular.module("MyApp", [])
 		self.isSet = function(tabNum){
 	      	return self.tab === tabNum;
 	    };
+
+	    //toggle buttons for colored/bw social icons
+		self.onactive = true;
+		self.offactive = false;
+
+		self.changeColorIcons = function(button) {
+		    if (button === 'on') {
+		        self.onactive = true;
+		        self.offactive = false;
+		    } else if ( button === 'off') {
+		        self.onactive = false;
+		        self.offactive = true;
+		    }
+	    };
+
+
+	    //callback for successful URL check that it exists, used in self.checkValid
+	    var callback = function(workingURL, index){
+	    	//assign the working url to the array of social media info
+	    	self.socialArr[index].fullURL = workingURL;
+	    };
+
+	    //method to check if Social URL is valid
+	    self.checkValid = function(index, enteredText){
+	    	var protocol = 'http://';
+	    	var socialSite = self.socialArr[index].url;
+	    	var fullURLtoCheck = (self.socialArr[index].label === "Tumblr") ? protocol+enteredText+socialSite : protocol+socialSite+enteredText;
+		    UseHttp.urlExists(fullURLtoCheck, callback, index);
+	    }
 	
-}).service('Utilities', function($http) {
+	}).service('UseHttp', function($http) {
 
-	var self = this;
+		var self = this;
 
-	self.getData = function(jsonData) {
-	    // return the promise
-	    return $http.get(jsonData).then(function(response) { 
-	        return response.data;
-	    }, function(response) {
-	        //Second function handles error
-	        console.log("Error loading JSON data");
-	    });
-	};
+		self.request = function(url) {
+		    // return the promise
+		    return $http.get(url).then(function(response) { 
+		    	return response.data;
+		    }, function(response) {
+		        //Second function handles error
+		        console.log("Error loading data");
+		    });
+		};
 
-});
+		self.urlExists = function(url, callback, index){
+			$.ajax({
+			    type: 'HEAD',
+			    url: url,
+			    success: function(){
+			      console.log("URL exists: "+url);
+			      callback(url, index);
+			    },
+			    error: function() {
+			      console.log("URL doesn't exist: "+url);
+			    }
+			});
+		};
+
+
+	});
 

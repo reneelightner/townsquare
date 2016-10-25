@@ -27,6 +27,7 @@ $darkerBlue-hover: #31b0d5;
 @mixin border() {
 	border-radius: 1px;
 	border-color: $gray3;
+	box-shadow: none;
 }
 
 @mixin placeholderColor($thecolor) {
@@ -101,7 +102,6 @@ form{
 		.form-control{
 			color: $gray1;
 			@include border;
-			box-shadow: none;
 			font-size: 12px;
 		}
 	}
@@ -110,7 +110,7 @@ form{
 .well{
 	@include border;
 	background-color: $gray1;
-	box-shadow: none;
+	@include placeholderColor($gray2);
 	&.no-fill{
 		background-color: #fff;
 	}
