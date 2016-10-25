@@ -95,6 +95,9 @@ label, h4, h3{
 
 label{
 	font-size: 12px;
+	&.preview{
+		padding-right: 5px;
+	}
 }
 
 form{

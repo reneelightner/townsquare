@@ -65,8 +65,8 @@
 									<i class="fa" ng-class="social.iconClass"></i>
 									<label>{{social.label}}</label>
 									<span ng-show="myCtrl.socialArr[$index].fullURL" class='pull-right'>
-										<label>preview:</label>
-										<a target="new" ng-href={{myCtrl.socialArr[$index].fullURL}}><i class="fa" ng-class="social.iconClass"></i></a>
+										<label class='preview'>Preview link:</label>
+										<a target="_blank" ng-href={{myCtrl.socialArr[$index].fullURL}}><i class="fa" ng-class="social.iconClass"></i></a>
 									</span>
 								</li>
 							</ul>

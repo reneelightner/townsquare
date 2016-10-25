@@ -31,6 +31,8 @@ label, h4, h3 {
 
 label {
   font-size: 12px; }
+  label.preview {
+    padding-right: 5px; }
 
 form .form-group .form-control {
   color: #F8F8F8;
@@ -42,8 +44,18 @@ form .form-group .form-control {
 .well {
   border-radius: 1px;
   border-color: #D8D8D8;
-  background-color: #F8F8F8;
-  box-shadow: none; }
+  box-shadow: none;
+  background-color: #F8F8F8; }
+  .well ::-webkit-input-placeholder {
+    color: #E8E8E8; }
+  .well :-moz-placeholder {
+    /* Firefox 18- */
+    color: #E8E8E8; }
+  .well ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #E8E8E8; }
+  .well :-ms-input-placeholder {
+    color: #E8E8E8; }
   .well.no-fill {
     background-color: #fff; }
   .well.well-sm {
@@ -63,7 +75,8 @@ form .form-group .form-control {
   font-size: 11px;
   font-weight: 600;
   border-radius: 1px;
-  border-color: #D8D8D8; }
+  border-color: #D8D8D8;
+  box-shadow: none; }
   .btn-group .btn:hover {
     background-color: #F8F8F8; }
   .btn-group .btn.active {
@@ -144,12 +157,14 @@ ul.social-icons {
     text-align: left;
     border-radius: 1px;
     border-color: #D8D8D8;
+    box-shadow: none;
     padding-left: 12px;
     color: #585858; }
   .input-group .form-control {
     font-size: 12px;
     height: 30px;
     border-radius: 1px;
-    border-color: #D8D8D8; }
+    border-color: #D8D8D8;
+    box-shadow: none; }
 
 /*# sourceMappingURL=styles.css.map */

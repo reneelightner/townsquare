@@ -44,11 +44,11 @@ var myModule = angular.module("MyApp", [])
 
 	    //method to check if Social URL is valid
 	    self.checkValid = function(index, enteredText){
-	    	var protocol = 'http://';
+	    	var protocol = 'https://';
 	    	var socialSite = self.socialArr[index].url;
 	    	var fullURLtoCheck = (self.socialArr[index].label === "Tumblr") ? protocol+enteredText+socialSite : protocol+socialSite+enteredText;
 		    UseHttp.urlExists(fullURLtoCheck, callback, index);
-	    }
+	    };
 	
 	}).service('UseHttp', function($http) {
 
@@ -74,6 +74,7 @@ var myModule = angular.module("MyApp", [])
 			    },
 			    error: function() {
 			      console.log("URL doesn't exist: "+url);
+			      callback(url, index);
 			    }
 			});
 		};
